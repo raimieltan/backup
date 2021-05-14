@@ -1,0 +1,36 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "user_name": "John",
+        "password": "doe",
+        "email": "johndoe@abc.com",
+        "gender": "Male",
+        "status": "Terminated"
+      },
+      {
+        "id": 2,
+        "user_name": "Jane",
+        "password": "doe",
+        "email": "janedoe@abc.com",
+        "gender": "Female",
+        "status": "New"
+      },
+      {
+        "id": 3,
+        "user_name": "Alice",
+        "password": "doe",
+        "email": "alicedoe@abc.com",
+        "gender": "Female",
+        "status": "Leaving"
+      },
+      {
+        "id": 4,
+        "user_name": "Bob",
+        "password": "doe",
+        "email": "bobdoe@abc.com",
+         "gender": "Male",
+        "status": "Active"
+      }
+    ]
+  }

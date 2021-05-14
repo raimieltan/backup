@@ -1,0 +1,56 @@
+An engineer has built an extendable wall for defense purposes.To test his invention, he has decided to use it for repairing walls destroyed by missiles.
+
+To simulate this demonstration, you will create a program that takes in 3 inputs:
+- A 64-bit number that will represent the wall when converted to binary form (1010100...)
+- The number of extendable wall kits you have
+- An array of the places in the wall where missiles will create holes
+
+As a 64-bit number, the wall will be a string of 1s and 0s, each 1 representing a unit of the wall 
+and each 0 representing where there are holes in the wall, and the wall will be 64 units in length.
+
+For example:
+
+23555678 -> 0000000000000000000000000000000000000001011001110110111001011110
+
+Once the number has been converted into a wall, for each number in the array the user inputs, it will 
+"destroy" the exact wall unit in that place, which means converting it to 0. If it is already 0, leave 
+it as it is.
+
+For example:
+
+Destroy [43, 54, 61] in 0000000000000000000000000000000000000001011001110110111001011110
+
+61st bit turned to 0 -> 0000000000000000000000000000000000000001011001110110111001011{0}10
+
+54th bit turned to 0 -> 000000000000000000000000000000000000000101100111011011{0}001011010
+
+43rd bit already 0 (no change) -> 0000000000000000000000000000000000000001011{0}01110110110001011010
+
+Final representation -> 0000000000000000000000000000000000000001011001110110110001011010
+
+After the attacks, the program will repair walls from right to left, using all extendable wall kits given.
+
+Extendable walls are slightly bigger than 1 wall unit, but have special connectors between them that allow 2 
+extendable walls to be as wide as 2 wall units, and succeeding connected walls to also be as wide as 1 wall unit each (or simply, you cannot repair holes 1 unit wide), so it can only repair holes in the wall that are at least 2 units wide. Repairing one hole, or turning one bit back from 0 to 1, will require 1 extendable wall kit.
+
+For example:
+
+Given 2 kits, repair 0000000000000000000000000000000000000001011001110110110001011010:
+
+First hole spanning at least 2 units -> 000000000000000000000000000000000000000101100111011011{000}1011010
+
+Use one kit -> 000000000000000000000000000000000000000101100111011011{001}1011010
+
+Use two kits - > 000000000000000000000000000000000000000101100111011011{011}1011010
+
+Final repaired wall -> 0000000000000000000000000000000000000001011001110110110111011010
+
+The final output should return the decimal representation of the final repaired wall, and following the 
+above example:
+
+0000000000000000000000000000000000000001011001110110110111011010 -> 23555546
+
+Therefore, 23555546 should be your final resulting output.
+
+Note: As the numbers processed in the program are 64-bit, you must use "long" instead of "int" as the
+variable types of numbers for statically typed languages (Java, C#).
